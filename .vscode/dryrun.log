@@ -1,0 +1,535 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/matthew/Development/repos/ludwig'
+make build
+ 
+make[1]: Entering directory '/home/matthew/Development/repos/ludwig'
+echo "Build "serial version" -> serial"
+make -C target
+ 
+make[2]: Entering directory '/home/matthew/Development/repos/ludwig/target'
+gcc -O -g -Wall -c target_x86.c
+ar -cru libtarget.a target_x86.o
+make[2]: Leaving directory '/home/matthew/Development/repos/ludwig/target'
+ 
+make -C src
+ 
+make[2]: Entering directory '/home/matthew/Development/repos/ludwig/src'
+make build
+ 
+make[3]: Entering directory '/home/matthew/Development/repos/ludwig/src'
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c field.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_rheology.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_symmetric.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c advection_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lc_droplet_rt.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c colloids.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c noise.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c coords_field.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_calibration.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c symmetric_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_bc_open_rt.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_d2q9.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c brazovskii.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c compiler.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c colloids_halo.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c io_options_rt.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c model.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c pair_ss_cut_ij.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c memory.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c hydro_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c blue_phase_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c psi_force.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c util.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lc_anchoring.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c fe_electro_symmetric.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_surfactant.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_3d_7pt_fluid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c timer.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c advection.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lc_droplet.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c surfactant_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_2d_ternary_solid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c pe.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c symmetric.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_colloid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c cahn_hilliard_stats.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_bc_outflow_opts.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lubrication.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_3d_7pt_solid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c field_psi_init_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c interaction.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c advection_bcs.c
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c runtime.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c blue_phase.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c driven_colloid_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c visc_arrhenius.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c angle_cosine.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c nernst_planck.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c halo_swap.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c colloid_io.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c surfactant.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c brazovskii_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_bc_outflow_free.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c propagation.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_force_stress.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_bc_inflow_opts.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c psi_stats.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_data_options.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c cahn_hilliard.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_3d_27pt_fluid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c psi_sor.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c blue_phase_beris_edwards.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c ewald.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_d3q15.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_2d_tomita_fluid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c wall_ss_cut.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c psi_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c distribution_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_bc_inflow_rhou.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_lb_coupler.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c psi_init.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_d3q19.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c physics_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c pe_fenv.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c colloid_io_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_bc_outflow_rhou.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c fe_electro.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c polar_active_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_d3q27.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c fe_ternary_stats.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c colloid_sums.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c brownian.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c map_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c field_options.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c io_harness.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c map_init.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c fe_ternary_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c pair_ss_cut.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_grad_mu.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c hydro.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c pair_lj_cut.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c wall_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c bbl.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c psi.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_force.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c psi_petsc.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c subgrid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c bond_fene.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c polar_active.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c ludwig.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_bc_outflow_opts.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c collision.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_bc_open_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c leesedwards_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c map.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_cahn_hilliard.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c psi_gradients.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c fe_ternary.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_turbulent.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c lb_model.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c kernel.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c psi_colloid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c build.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c io_options.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c colloids_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_force_colloid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_s7_anchoring.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c model_le.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c wall.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c ran.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c fe_lc_stats.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c field_ternary_init.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c field_phi_init.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_d3q27.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c collision_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_stats.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_colloid_force_split.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c control.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c leesedwards.c
+ 
+gcc -O -g -Wall -I.././mpi_s -I.././target -O0 -c util_sum.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_3d_ternary_solid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_bc_inflow_opts.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c coords_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c io_info_args_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c colloid_link.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c field_phi_init_rt.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_velocity.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_2d_5pt_fluid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c colloids_init.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c leslie_ericksen.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c driven_colloid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_free_energy.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c physics.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_sigma.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c stats_distribution.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c gradient_3d_27pt_solid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c colloid.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c hydro_options.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c coords.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c io_info_args.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c field_grad.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c blue_phase_init.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c pair_yukawa.c
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c phi_bc_inflow_fixed.c
+ 
+ar -cru libludwig.a stats_colloid.o collision.o leesedwards_rt.o psi_gradients.o fe_ternary.o ludwig.o bond_fene.o kernel.o blue_phase_rt.o phi_force_colloid.o model_le.o wall.o field_phi_init.o control.o util_sum.o gradient_3d_ternary_solid.o lb_bc_inflow_rhou.o io_info_args_rt.o stats_free_energy.o model.o stats_velocity.o colloids_rt.o map.o colloids_init.o physics.o stats_sigma.o io_info_args.o field_grad.o pair_lj_cut.o field.o stats_symmetric.o advection_rt.o lc_droplet_rt.o colloids.o noise.o coords_field.o stats_calibration.o phi_bc_inflow_fixed.o fe_ternary_stats.o coords.o colloids_halo.o util.o lc_anchoring.o fe_electro_symmetric.o gradient_3d_7pt_fluid.o timer.o advection.o lc_droplet.o surfactant_rt.o gradient_2d_ternary_solid.o pe_fenv.o cahn_hilliard_stats.o lubrication.o advection_bcs.o blue_phase.o driven_colloid_rt.o angle_cosine.o nernst_planck.o halo_swap.o surfactant.o brazovskii_rt.o psi_stats.o psi_sor.o blue_phase_beris_edwards.o wall_ss_cut.o driven_colloid.o bbl.o physics_rt.o pe.o colloid_io_rt.o lb_bc_outflow_rhou.o gradient_3d_27pt_solid.o polar_active_rt.o lb_d3q27.o brazovskii.o brownian.o io_harness.o phi_stats.o ran.o stats_turbulent.o phi_grad_mu.o leesedwards.o psi_petsc.o subgrid.o field_ternary_init.o polar_active.o lb_bc_open_rt.o phi_lb_coupler.o stats_distribution.o gradient_d3q27.o gradient_rt.o lb_model.o field_psi_init_rt.o gradient_s7_anchoring.o fe_lc_stats.o stats_colloid_force_split.o coords_rt.o colloid.o psi_colloid.o map_init.o leslie_ericksen.o colloid_link.o compiler.o symmetric_rt.o hydro_options.o pair_yukawa.o distribution_rt.o pair_ss_cut_ij.o phi_cahn_hilliard.o phi_bc_open_rt.o lb_d2q9.o pair_ss_cut.o lb_d3q19.o io_options_rt.o phi_bc_inflow_opts.o memory.o phi_bc_outflow_opts.o stats_surfactant.o symmetric.o lb_bc_outflow_opts.o gradient_3d_7pt_solid.o psi_force.o io_options.o interaction.o blue_phase_init.o runtime.o field_options.o visc_arrhenius.o hydro.o colloid_io.o phi_bc_outflow_free.o propagation.o phi_force_stress.o build.o lb_bc_inflow_opts.o lb_data_options.o cahn_hilliard.o gradient_3d_27pt_fluid.o ewald.o lb_d3q15.o psi_rt.o gradient_2d_5pt_fluid.o psi_init.o fe_electro.o collision_rt.o colloid_sums.o map_rt.o stats_rheology.o fe_ternary_rt.o hydro_rt.o gradient_2d_tomita_fluid.o wall_rt.o psi.o phi_force.o field_phi_init_rt.o
+ 
+gcc -D_D3Q19_  -O -g -Wall -I.././mpi_s -I.././target -c main.c
+gcc  -o Ludwig.exe main.o libludwig.a -L.././mpi_s -lmpi  .././target/libtarget.a -lm
+make[3]: Leaving directory '/home/matthew/Development/repos/ludwig/src'
+ 
+make[2]: Leaving directory '/home/matthew/Development/repos/ludwig/src'
+ 
+make -C tests
+ 
+make[2]: Entering directory '/home/matthew/Development/repos/ludwig/tests'
+make build
+make[3]: Entering directory '/home/matthew/Development/repos/ludwig/tests'
+make -C unit
+ 
+make[4]: Entering directory '/home/matthew/Development/repos/ludwig/tests/unit'
+echo "Build unit tests"
+make build
+ 
+make[5]: Entering directory '/home/matthew/Development/repos/ludwig/tests/unit'
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_blue_phase.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lb_bc_outflow_rhou.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_bond_fene.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lb_d3q15.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_bonds.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_hydro.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_build.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_pair_ss_cut.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lc_anchoring.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_phi_gradients.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lb_d3q19.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_pair_ss_cut_ij.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_io.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_ch.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_phi_bc_inflow_opts.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_phi_bc_inflow_fixed.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lubrication.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lb_model.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_coords.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lb_d3q27.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_fe_electro_symm.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_fe_surfactant1.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_io_options.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_le.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_phi_bc_outflow_free.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_timer.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_fe_electro.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_halo.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_map_init.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_colloids.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_pair_lj_cut.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_be.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c tests.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_kernel.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lb_bc_outflow_opts.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_polar_active.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_field_grad.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_phi_bc_outflow_opts.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_noise.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_wall_ss_cut.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_field.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_fe_lc_droplet.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_angle_cosine.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_nernst_planck.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lb_bc_inflow_rhou.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_io_options_rt.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lb_d2q9.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_psi_sor.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_prop.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_colloid.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_random.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_util_sum.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_util.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_colloids_halo.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_fe_symmetric.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_visc_arrhenius.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_model.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_coords_field.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_wall.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_assumptions.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_ewald.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_fe_ternary.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_pe.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_phi_ch.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_sigma.c
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_lb_bc_inflow_opts.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_gradient_d3q27.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_colloid_sums.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_pair_yukawa.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_psi.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_runtime.c
+ 
+gcc -D_D3Q19_ -O -g -Wall -I../.././src -I../.././target -I../.././mpi_s -c test_map.c
+ 
+gcc  test_blue_phase.o test_lb_bc_outflow_rhou.o test_bond_fene.o test_lb_d3q15.o test_bonds.o test_hydro.o test_build.o test_pair_ss_cut.o test_lc_anchoring.o test_phi_gradients.o test_lb_d3q19.o test_pair_ss_cut_ij.o test_io.o test_ch.o test_phi_bc_inflow_opts.o test_phi_bc_inflow_fixed.o test_lubrication.o test_lb_model.o test_coords.o test_lb_d3q27.o test_fe_electro_symm.o test_fe_surfactant1.o test_io_options.o test_le.o test_phi_bc_outflow_free.o test_timer.o test_fe_electro.o test_halo.o test_map_init.o test_colloids.o test_pair_lj_cut.o test_be.o tests.o test_kernel.o test_lb_bc_outflow_opts.o test_polar_active.o test_field_grad.o test_phi_bc_outflow_opts.o test_noise.o test_wall_ss_cut.o test_field.o test_fe_lc_droplet.o test_angle_cosine.o test_nernst_planck.o test_lb_bc_inflow_rhou.o test_io_options_rt.o test_lb_d2q9.o test_psi_sor.o test_prop.o test_colloid.o test_random.o test_util_sum.o test_util.o test_colloids_halo.o test_fe_symmetric.o test_visc_arrhenius.o test_model.o test_coords_field.o test_wall.o test_assumptions.o test_ewald.o test_fe_ternary.o test_pe.o test_phi_ch.o test_sigma.o test_lb_bc_inflow_opts.o test_gradient_d3q27.o test_colloid_sums.o test_pair_yukawa.o test_psi.o test_runtime.o test_map.o -L../.././mpi_s -lmpi  ../.././target/libtarget.a ../.././src/libludwig.a -lm
+ 
+make[5]: Leaving directory '/home/matthew/Development/repos/ludwig/tests/unit'
+ 
+make[4]: Leaving directory '/home/matthew/Development/repos/ludwig/tests/unit'
+ 
+make[3]: Leaving directory '/home/matthew/Development/repos/ludwig/tests'
+ 
+make[2]: Leaving directory '/home/matthew/Development/repos/ludwig/tests'
+ 
+make -C util
+ 
+make[2]: Entering directory '/home/matthew/Development/repos/ludwig/util'
+make build
+ 
+make[3]: Entering directory '/home/matthew/Development/repos/ludwig/util'
+make extract
+ 
+make[4]: Entering directory '/home/matthew/Development/repos/ludwig/util'
+gcc -O -g -Wall -I.././src -I.././target -I.././mpi_s -c extract.c
+ 
+gcc  -o extract extract.o .././src/libludwig.a -L.././mpi_s -lmpi  .././target/libtarget.a -lm
+make[4]: Leaving directory '/home/matthew/Development/repos/ludwig/util'
+ 
+make capillary
+ 
+make[4]: Entering directory '/home/matthew/Development/repos/ludwig/util'
+gcc -O -g -Wall -I.././src -I.././target -I.././mpi_s -c capillary.c
+ 
+gcc  -o capillary capillary.o .././src/libludwig.a -L.././mpi_s -lmpi  .././target/libtarget.a -lm -lm
+make[4]: Leaving directory '/home/matthew/Development/repos/ludwig/util'
+ 
+make colloid_init
+ 
+make[4]: Entering directory '/home/matthew/Development/repos/ludwig/util'
+gcc -O -g -Wall -I.././src -I.././target -I.././mpi_s -c colloid_init.c
+ 
+gcc  -o colloid_init colloid_init.o .././src/libludwig.a -L.././mpi_s -lmpi  .././target/libtarget.a -lm
+make[4]: Leaving directory '/home/matthew/Development/repos/ludwig/util'
+ 
+make extract_colloids
+ 
+make[4]: Entering directory '/home/matthew/Development/repos/ludwig/util'
+gcc -O -g -Wall -I.././src -I.././target -I.././mpi_s -c extract_colloids.c
+ 
+gcc  -o extract_colloids extract_colloids.o .././src/libludwig.a -L.././mpi_s -lmpi  .././target/libtarget.a -lm
+make[4]: Leaving directory '/home/matthew/Development/repos/ludwig/util'
+ 
+make coll_squ_subgrid_init
+ 
+make[4]: Entering directory '/home/matthew/Development/repos/ludwig/util'
+gcc -O -g -Wall -I.././src -I.././target -I.././mpi_s -c coll_squ_subgrid_init.c
+ 
+gcc  -o coll_squ_subgrid_init coll_squ_subgrid_init.o .././src/libludwig.a -L.././mpi_s -lmpi  .././target/libtarget.a -lm
+make[4]: Leaving directory '/home/matthew/Development/repos/ludwig/util'
+ 
+make multi_poly_init
+ 
+make[4]: Entering directory '/home/matthew/Development/repos/ludwig/util'
+gcc -O -g -Wall -I.././src -I.././target -I.././mpi_s -c multi_poly_init.c
+ 
+gcc  -o multi_poly_init multi_poly_init.o .././src/libludwig.a -L.././mpi_s -lmpi  .././target/libtarget.a -lm
+make[4]: Leaving directory '/home/matthew/Development/repos/ludwig/util'
+ 
+make polarizer
+ 
+make[4]: Entering directory '/home/matthew/Development/repos/ludwig/util'
+gcc -O -g -Wall -I.././src -I.././target -I.././mpi_s -c polarizer.c
+ 
+gcc  -o polarizer polarizer.o .././src/libludwig.a -L.././mpi_s -lmpi  .././target/libtarget.a -lm
+make[4]: Leaving directory '/home/matthew/Development/repos/ludwig/util'
+ 
+make[3]: Leaving directory '/home/matthew/Development/repos/ludwig/util'
+ 
+make[2]: Leaving directory '/home/matthew/Development/repos/ludwig/util'
+ 
+make[1]: Leaving directory '/home/matthew/Development/repos/ludwig'
+ 
+make: Leaving directory '/home/matthew/Development/repos/ludwig'
+ 

@@ -1,0 +1,151 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Overview}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Purpose of the code}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{How the code works}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{Who should read what?}{subsection.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.2}{Obtaining the code}{section.1}% 6
+\BOOKMARK [1][-]{section.2}{Quick Start for Users}{}% 7
+\BOOKMARK [2][-]{subsection.2.1}{Running an Example}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Input file}{subsection.2.1}% 9
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Example input}{subsection.2.1}% 10
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Run time}{subsection.2.1}% 11
+\BOOKMARK [3][-]{subsubsection.2.1.4}{Output}{subsection.2.1}% 12
+\BOOKMARK [3][-]{subsubsection.2.1.5}{Errors and run time failures}{subsection.2.1}% 13
+\BOOKMARK [2][-]{subsection.2.2}{Note on Units}{section.2}% 14
+\BOOKMARK [1][-]{section.3}{General Information for Users and Developers}{}% 15
+\BOOKMARK [2][-]{subsection.3.1}{Manifest}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.2}{Code Overview}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Design}{subsection.3.2}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Parallel environment}{subsection.3.2}% 19
+\BOOKMARK [3][-]{subsubsection.3.2.3}{targetDP: threaded parallelism and vector parallelism}{subsection.3.2}% 20
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Array address models}{subsection.3.2}% 21
+\BOOKMARK [3][-]{subsubsection.3.2.5}{Coordinate system}{subsection.3.2}% 22
+\BOOKMARK [3][-]{subsubsection.3.2.6}{Lattice Boltzmann hydrodynamics}{subsection.3.2}% 23
+\BOOKMARK [3][-]{subsubsection.3.2.7}{Free energy}{subsection.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.3}{Compilation}{section.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Dependencies on third-party software:}{subsection.3.3}% 26
+\BOOKMARK [1][-]{section.4}{Lattice Boltzmann Hydrodynamics}{}% 27
+\BOOKMARK [2][-]{subsection.4.1}{The Navier Stokes Equation}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.2}{The Lattice Boltzmann Equation}{section.4}% 29
+\BOOKMARK [3][-]{subsubsection.4.2.1}{The distribution function and its moments}{subsection.4.2}% 30
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Collision and relaxation times}{subsection.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.3}{Model Basis Descriptions}{section.4}% 32
+\BOOKMARK [3][-]{subsubsection.4.3.1}{D2Q9}{subsection.4.3}% 33
+\BOOKMARK [3][-]{subsubsection.4.3.2}{D3Q15}{subsection.4.3}% 34
+\BOOKMARK [3][-]{subsubsection.4.3.3}{D3Q19}{subsection.4.3}% 35
+\BOOKMARK [2][-]{subsection.4.4}{Fluctuating LBE}{section.4}% 36
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Fluctuating stress}{subsection.4.4}% 37
+\BOOKMARK [2][-]{subsection.4.5}{Hydrodynamic Boundary Conditions}{section.4}% 38
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Bounce-Back on Links}{subsection.4.5}% 39
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Fixed objects}{subsection.4.5}% 40
+\BOOKMARK [3][-]{subsubsection.4.5.3}{Moving objects}{subsection.4.5}% 41
+\BOOKMARK [1][-]{section.5}{Lees Edwards Sliding Periodic Boundary Conditions}{}% 42
+\BOOKMARK [2][-]{subsection.5.1}{Background}{section.5}% 43
+\BOOKMARK [2][-]{subsection.5.2}{Distributions crossing the LE planes}{section.5}% 44
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Reprojection}{subsection.5.2}% 45
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Interpolation of reprojected distributions}{subsection.5.2}% 46
+\BOOKMARK [2][-]{subsection.5.3}{Order parameter gradients}{section.5}% 47
+\BOOKMARK [2][-]{subsection.5.4}{Velocities and finite-difference fluxes}{section.5}% 48
+\BOOKMARK [1][-]{section.6}{Colloid Dynamics}{}% 49
+\BOOKMARK [2][-]{subsection.6.1}{Hydrodynamics}{section.6}% 50
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Rotational motions}{subsection.6.1}% 51
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Changes in particle shape}{subsection.6.1}% 52
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Particles near contact}{subsection.6.1}% 53
+\BOOKMARK [2][-]{subsection.6.2}{Colloid-Colloid interactions}{section.6}% 54
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Lubrication corrections}{subsection.6.2}% 55
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Hard sphere interaction}{subsection.6.2}% 56
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Soft-sphere interaction}{subsection.6.2}% 57
+\BOOKMARK [3][-]{subsubsection.6.2.4}{Lennard-Jones interaction}{subsection.6.2}% 58
+\BOOKMARK [3][-]{subsubsection.6.2.5}{Dipole-dipole interactions}{subsection.6.2}% 59
+\BOOKMARK [2][-]{subsection.6.3}{External Forces}{section.6}% 60
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Gravity}{subsection.6.3}% 61
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Magnetic field}{subsection.6.3}% 62
+\BOOKMARK [3][-]{subsubsection.6.3.3}{Electric Field}{subsection.6.3}% 63
+\BOOKMARK [1][-]{section.7}{Binary Fluids}{}% 64
+\BOOKMARK [2][-]{subsection.7.1}{The Symmetric Free Energy}{section.7}% 65
+\BOOKMARK [3][-]{subsubsection.7.1.1}{Thermodynamics}{subsection.7.1}% 66
+\BOOKMARK [3][-]{subsubsection.7.1.2}{The free energy density in practice}{subsection.7.1}% 67
+\BOOKMARK [3][-]{subsubsection.7.1.3}{Dynamics}{subsection.7.1}% 68
+\BOOKMARK [3][-]{subsubsection.7.1.4}{Surface \(or wetting\) free energy}{subsection.7.1}% 69
+\BOOKMARK [2][-]{subsection.7.2}{Implementation}{section.7}% 70
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Lattice kinetic approach}{subsection.7.2}% 71
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Finite difference approach}{subsection.7.2}% 72
+\BOOKMARK [1][-]{section.8}{Liquid Crystals}{}% 73
+\BOOKMARK [2][-]{subsection.8.1}{The Landau-de Gennes Approach}{section.8}% 74
+\BOOKMARK [3][-]{subsubsection.8.1.1}{Tensor order parameter}{subsection.8.1}% 75
+\BOOKMARK [3][-]{subsubsection.8.1.2}{Free Energy Density}{subsection.8.1}% 76
+\BOOKMARK [3][-]{subsubsection.8.1.3}{Molecular Field}{subsection.8.1}% 77
+\BOOKMARK [2][-]{subsection.8.2}{Surface Anchoring}{section.8}% 78
+\BOOKMARK [3][-]{subsubsection.8.2.1}{General boundary condition}{subsection.8.2}% 79
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Normal or homeotropic anchoring}{subsection.8.2}% 80
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Planar \(degenerate\) anchoring}{subsection.8.2}% 81
+\BOOKMARK [2][-]{subsection.8.3}{Dynamics}{section.8}% 82
+\BOOKMARK [3][-]{subsubsection.8.3.1}{Active stress}{subsection.8.3}% 83
+\BOOKMARK [2][-]{subsection.8.4}{Implementation}{section.8}% 84
+\BOOKMARK [3][-]{subsubsection.8.4.1}{Fluid}{subsection.8.4}% 85
+\BOOKMARK [3][-]{subsubsection.8.4.2}{Solid}{subsection.8.4}% 86
+\BOOKMARK [3][-]{subsubsection.8.4.3}{Boundary conditions}{subsection.8.4}% 87
+\BOOKMARK [1][-]{section.9}{Liquid Crystal Emulsions}{}% 88
+\BOOKMARK [2][-]{subsection.9.1}{Combined Approach}{section.9}% 89
+\BOOKMARK [3][-]{subsubsection.9.1.1}{Order parameters}{subsection.9.1}% 90
+\BOOKMARK [3][-]{subsubsection.9.1.2}{Free energy densities}{subsection.9.1}% 91
+\BOOKMARK [3][-]{subsubsection.9.1.3}{Control of the isotropic/nematic transition}{subsection.9.1}% 92
+\BOOKMARK [3][-]{subsubsection.9.1.4}{Chemical potential}{subsection.9.1}% 93
+\BOOKMARK [3][-]{subsubsection.9.1.5}{Molecular field}{subsection.9.1}% 94
+\BOOKMARK [3][-]{subsubsection.9.1.6}{Stress and the force on the fluid}{subsection.9.1}% 95
+\BOOKMARK [2][-]{subsection.9.2}{Implementation}{section.9}% 96
+\BOOKMARK [1][-]{section.10}{Electrokinetics}{}% 97
+\BOOKMARK [2][-]{subsection.10.1}{Sress tensor in the electrosymmetic model}{section.10}% 98
+\BOOKMARK [3][-]{subsubsection.10.1.1}{Definitions}{subsection.10.1}% 99
+\BOOKMARK [3][-]{subsubsection.10.1.2}{Electromechanical stress tensor}{subsection.10.1}% 100
+\BOOKMARK [2][-]{subsection.10.2}{Examples}{section.10}% 101
+\BOOKMARK [3][-]{subsubsection.10.2.1}{Gouy-Chapman}{subsection.10.2}% 102
+\BOOKMARK [3][-]{subsubsection.10.2.2}{Liquid-junction potential}{subsection.10.2}% 103
+\BOOKMARK [3][-]{subsubsection.10.2.3}{Electroosmotic Flow}{subsection.10.2}% 104
+\BOOKMARK [3][-]{subsubsection.10.2.4}{Debye-H\374ckel Theory}{subsection.10.2}% 105
+\BOOKMARK [1][-]{section.11}{The Input File}{}% 106
+\BOOKMARK [2][-]{subsection.11.1}{General}{section.11}% 107
+\BOOKMARK [3][-]{subsubsection.11.1.1}{Key value pairs}{subsection.11.1}% 108
+\BOOKMARK [2][-]{subsection.11.2}{The Free Energy}{section.11}% 109
+\BOOKMARK [3][-]{subsubsection.11.2.1}{Symmetric Binary Fluids}{subsection.11.2}% 110
+\BOOKMARK [3][-]{subsubsection.11.2.2}{Brazovskii smectics}{subsection.11.2}% 111
+\BOOKMARK [3][-]{subsubsection.11.2.3}{Surfactants}{subsection.11.2}% 112
+\BOOKMARK [3][-]{subsubsection.11.2.4}{Polar active gels}{subsection.11.2}% 113
+\BOOKMARK [3][-]{subsubsection.11.2.5}{Liquid crystal}{subsection.11.2}% 114
+\BOOKMARK [3][-]{subsubsection.11.2.6}{Liquid crystal anchoring}{subsection.11.2}% 115
+\BOOKMARK [3][-]{subsubsection.11.2.7}{Liquid crystal emulsion}{subsection.11.2}% 116
+\BOOKMARK [2][-]{subsection.11.3}{System Parameters}{section.11}% 117
+\BOOKMARK [3][-]{subsubsection.11.3.1}{Parallel decomposition}{subsection.11.3}% 118
+\BOOKMARK [2][-]{subsection.11.4}{Fluid Parameters}{section.11}% 119
+\BOOKMARK [2][-]{subsection.11.5}{Lees Edwards Planes}{section.11}% 120
+\BOOKMARK [2][-]{subsection.11.6}{Colloids}{section.11}% 121
+\BOOKMARK [3][-]{subsubsection.11.6.1}{General Initialisation}{subsection.11.6}% 122
+\BOOKMARK [3][-]{subsubsection.11.6.2}{Random initialisation}{subsection.11.6}% 123
+\BOOKMARK [3][-]{subsubsection.11.6.3}{Interactions}{subsection.11.6}% 124
+\BOOKMARK [3][-]{subsubsection.11.6.4}{External forces}{subsection.11.6}% 125
+\BOOKMARK [2][-]{subsection.11.7}{Order parameter initialisations}{section.11}% 126
+\BOOKMARK [3][-]{subsubsection.11.7.1}{Composition }{subsection.11.7}% 127
+\BOOKMARK [3][-]{subsubsection.11.7.2}{Tensor order Q}{subsection.11.7}% 128
+\BOOKMARK [1][-]{section.12}{Examples}{}% 129
+\BOOKMARK [2][-]{subsection.12.1}{Permeability calculations in simple porous media}{section.12}% 130
+\BOOKMARK [3][-]{subsubsection.12.1.1}{Circular and rectangular capillaries}{subsection.12.1}% 131
+\BOOKMARK [3][-]{subsubsection.12.1.2}{Setting up a structure}{subsection.12.1}% 132
+\BOOKMARK [3][-]{subsubsection.12.1.3}{Setting up the input}{subsection.12.1}% 133
+\BOOKMARK [3][-]{subsubsection.12.1.4}{Extracting the conductance}{subsection.12.1}% 134
+\BOOKMARK [3][-]{subsubsection.12.1.5}{In parallel}{subsection.12.1}% 135
+\BOOKMARK [3][-]{subsubsection.12.1.6}{General porous media}{subsection.12.1}% 136
+\BOOKMARK [3][-]{subsubsection.12.1.7}{Matching lattice and real units in porous media}{subsection.12.1}% 137
+\BOOKMARK [1][-]{section.13}{Further Information for Developers}{}% 138
+\BOOKMARK [2][-]{subsection.13.1}{Address models for 3-dimensional fields}{section.13}% 139
+\BOOKMARK [3][-]{subsubsection.13.1.1}{Rank 1 objects \(to include scalar fields\)}{subsection.13.1}% 140
+\BOOKMARK [3][-]{subsubsection.13.1.2}{Rank 2 objects \(to include dyadic tensor fields\)}{subsection.13.1}% 141
+\BOOKMARK [3][-]{subsubsection.13.1.3}{Compressed rank 2 objects}{subsection.13.1}% 142
+\BOOKMARK [3][-]{subsubsection.13.1.4}{Rank 3 objects \(to include triadic tensor fields\)}{subsection.13.1}% 143
+\BOOKMARK [3][-]{subsubsection.13.1.5}{Compressed rank 3 objects}{subsection.13.1}% 144
+\BOOKMARK [3][-]{subsubsection.13.1.6}{LB distribution data}{subsection.13.1}% 145
+\BOOKMARK [2][-]{subsection.13.2}{Generalised model for SIMD vectorisation}{section.13}% 146
+\BOOKMARK [3][-]{subsubsection.13.2.1}{Rank 1 objects}{subsection.13.2}% 147
+\BOOKMARK [2][-]{subsection.13.3}{Addressing: How to?}{section.13}% 148
+\BOOKMARK [3][-]{subsubsection.13.3.1}{Compilation}{subsection.13.3}% 149
+\BOOKMARK [3][-]{subsubsection.13.3.2}{Kernels}{subsection.13.3}% 150
+\BOOKMARK [1][-]{lstnumber.-69.9}{References}{}% 151
