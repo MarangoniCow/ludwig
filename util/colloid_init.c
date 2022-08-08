@@ -72,8 +72,8 @@ int main(int argc, char ** argv) {
   int nactual;
   int optind;
 
-  const double a0_default = 2.3;   /* Input radius */
-  const double ah_default = 2.3;   /* Hydrodynamic radius */ 
+  const double a0_default = 3.5;   /* Input radius */
+  const double ah_default = 3.5;   /* Hydrodynamic radius */ 
   const double vf_default = 0.02;  /* Volume fraction */
   const double dh_default = 0.5;   /* "grace' distance */
   const double q0_default = 0.0;   /* positive charge */ 

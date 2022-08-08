@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 21 10:27:03 2022
+# Make data base, printed on Fri Jul 22 12:57:47 2022
 
 # Variables
 
@@ -48,8 +48,10 @@ ROOT_DIR := ./
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
-# makefile (from 'config.mk', line 13)
-CFLAGS = -O -g -Wall
+# makefile (from 'config.mk', line 23)
+MPIRUN_NTASK_FLAG = -np
+# makefile (from 'config.mk', line 14)
+CFLAGS = -O -g
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
 # environment
@@ -81,21 +83,15 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/fractal-12700k:@/tmp/.ICE-unix/1298,unix/fractal-12700k:/tmp/.ICE-unix/1298
+SESSION_MANAGER = local/fractal-12700k:@/tmp/.ICE-unix/1343,unix/fractal-12700k:/tmp/.ICE-unix/1343
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# makefile (from 'config.mk', line 16)
-ARFLAGS = -cru
-# makefile (from 'config.mk', line 23)
+# makefile (from 'config.mk', line 21)
 LAUNCH_SERIAL_CMD = 
 # makefile (from 'Makefile.mk', line 32)
 TARGET_LIB = $(ROOT_DIR)./target/libtarget.a
-# makefile (from 'config.mk', line 15)
-AR = ar
 # environment
 ELECTRON_RUN_AS_NODE = 1
-# makefile (from 'config.mk', line 17)
-LDFLAGS = 
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -107,27 +103,27 @@ XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7725
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6366
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
 # makefile (from 'Makefile.mk', line 30)
 TARGET_INC_PATH = -I$(ROOT_DIR)./target
-# makefile (from 'Makefile.mk', line 46)
-MPI_LIB = -lmpi
+# makefile (from 'config.mk', line 19)
+MPI_LIB = 
 # environment
 PWD = /home/matthew/Development/repos/ludwig
 # environment
 QT_QPA_PLATFORMTHEME = qt5ct
-# makefile (from 'config.mk', line 10)
+# makefile (from 'config.mk', line 11)
 MODEL = -D_D3Q19_
 # default
 .LOADED := 
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1369
+SSH_AGENT_PID = 1413
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -144,8 +140,8 @@ VSCODE_CODE_CACHE_PATH = /home/matthew/.config/Code/CachedData/3b889b090b5ad5793
 LOGNAME = matthew
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# makefile (from 'Makefile.mk', line 44)
-MPI_INC_PATH = -I$(ROOT_DIR)./mpi_s
+# makefile (from 'config.mk', line 17)
+MPI_INC_PATH = 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -164,8 +160,8 @@ MAKECMDGOALS := all
 SHLVL = 0
 # makefile (from 'Makefile.mk', line 31)
 TARGET_LIB_PATH = 
-# makefile (from 'config.mk', line 12)
-CC = gcc
+# makefile (from 'config.mk', line 13)
+CC = mpicc
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -178,16 +174,16 @@ XDG_CURRENT_DESKTOP = X-Cinnamon
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := make
-# makefile (from 'Makefile.mk', line 42)
-MY_BUILD = "serial version"
+# makefile (from 'Makefile.mk', line 38)
+MY_BUILD = "parallel version"
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # environment
 LANGUAGE = en_GB:en
-# makefile (from 'Makefile.mk', line 45)
-MPI_LIB_PATH = -L$(ROOT_DIR)./mpi_s
+# makefile (from 'config.mk', line 18)
+MPI_LIB_PATH = 
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
@@ -212,14 +208,14 @@ QT_ACCESSIBILITY = 1
 DEFAULTS_PATH = /usr/share/gconf/cinnamon.default.path
 # default
 MAKEFILES := 
-# makefile (from 'config.mk', line 9)
-BUILD = serial
+# makefile (from 'config.mk', line 10)
+BUILD = parallel
 # automatic
 <F = $(notdir $<)
 # environment
 LC_ALL = C
-# makefile (from 'config.mk', line 24)
-LAUNCH_MPIRUN_CMD = 
+# makefile (from 'config.mk', line 22)
+LAUNCH_MPIRUN_CMD = mpirun
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # automatic
@@ -237,9 +233,9 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 7725
+VSCODE_PID = 6366
 # variable set hash-table stats:
-# Load=113/1024=11%, Rehash=0, Collisions=7/148=5%
+# Load=111/1024=11%, Rehash=0, Collisions=7/143=5%
 
 # Pattern-specific Variable Values
 
@@ -247,9 +243,9 @@ VSCODE_PID = 7725
 
 # Directories
 
-# . (device 2052, inode 6684867): 25 files, no impossibilities.
+# . (device 2052, inode 6684867): 30 files, no impossibilities.
 
-# 25 files, no impossibilities in 1 directories.
+# 30 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -260,7 +256,7 @@ VSCODE_PID = 7725
 # Not a target:
 config.mk:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-19 09:52:59.778081496
+#  Last modified 2022-07-21 15:39:44.333982807
 #  File has been updated.
 #  Successfully updated.
 
@@ -309,7 +305,6 @@ build:
 	$(MAKE) -C target
 	$(MAKE) -C src
 	$(MAKE) -C tests
- 
 	$(MAKE) -C util
 
 default:
@@ -327,6 +322,7 @@ default:
 
 clean:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 34):
@@ -344,12 +340,12 @@ clean:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 35 / storage = 299 B / avg = 8 B
-# current buf: size = 8162 B / used = 299 B / count = 35 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 40 / storage = 354 B / avg = 8 B
+# current buf: size = 8162 B / used = 354 B / count = 40 / avg = 8 B
 
-# strcache performance: lookups = 48 / hit rate = 27%
+# strcache performance: lookups = 53 / hit rate = 24%
 # hash-table stats:
-# Load=35/8192=0%, Rehash=0, Collisions=1/48=2%
-# Finished Make data base on Thu Jul 21 10:27:03 2022
+# Load=40/8192=0%, Rehash=0, Collisions=1/53=2%
+# Finished Make data base on Fri Jul 22 12:57:47 2022
 
  
