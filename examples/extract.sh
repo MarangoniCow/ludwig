@@ -11,12 +11,12 @@ else
 fi
 
 # Check for validity
-if [[ -f "./$filename/$filename.inp" ]]
+if [[ -f "./$filename/data" ]]
 then
-	echo "Building $filename"
+	echo "Extracting $filename"
 else
-	echo "Invalid example name"
-
+	echo "Error: $filename is invalid"]
+	exit 0
 fi
 
 # Run example
