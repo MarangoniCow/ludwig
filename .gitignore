@@ -11,3 +11,6 @@ a.out
 config.mk
 
 .idea
+docs/develop.log
+docs/ludwig.dvi
+**examples/*/
