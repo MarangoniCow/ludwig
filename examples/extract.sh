@@ -5,22 +5,21 @@ set -e
 if [[ $# -lt 1 ]]
 then
 	echo "Please enter example string, e.g. \"3DChannel\""
-	read file_name
+	read filename
 else
 	filename=$1
 fi
 
 # Check for validity
-if [[ -f "./$filename/data" ]]
+if [ -d "./$filename/data" ]
 then
 	echo "Extracting $filename"
 else
-	echo "Error: $filename is invalid"]
+	echo "Error: $filename is invalid"
 	exit 0
 fi
 
 # Run example
-mkdir -p ./$filename/data
 cd ./$filename/data
 
 # Fetch number of files
