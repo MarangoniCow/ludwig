@@ -59,7 +59,7 @@ echo --------------------------------------
 
 make clean
 make -j $SLURM_NTASKS
-cp ./src/Ludwig.exe ./examples
+cp ./src/Ludwig.exe ./${cwd}
 
 echo --------------------------------------
 echo
@@ -68,7 +68,7 @@ cd $cwd
 echo Current dir: `pwd`
 
 ./run.sh $SCRIPTNAME $SLURM_NTASKS
-./extract.sh $SCRIPTNAME
+#./extract.sh $SCRIPTNAME
 
 
 
