@@ -1,10 +1,15 @@
 #!/bin/bash
 set -e
 
+# SCRIPT USAGE
+# Automates the extraction of data from files. 
+
+cwd=$(pwd)
+
 # Check for input
 if [[ $# -lt 1 ]]
 then
-	echo "Please enter example string, e.g. \"3DChannel\""
+	echo "Enter filename, without extensions, e.g. \"3DChannel\""
 	read filename
 else
 	filename=$1

@@ -1,0 +1,80 @@
+#!/bin/bash
+#SBATCH --job-name=swimmer_confinement	 # Job name
+#SBATCH --mail-type=BEGIN,END,FAIL       # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=mjs572@york.ac.uk    # Where to send mail
+#SBATCH --ntasks=2                      # Run a single task...
+#SBATCH --cpus-per-task=1                # ...with four cores
+#SBATCH --mem=2gb                       # Job memory request
+#SBATCH --time=00:02:00                  # Time limit hrs:min:sec
+#SBATCH --output=%x_J%j.log         # Standard output and error log
+#SBATCH --account=math-fluidfilm-2020    # Project account
+#SBATCH --partition=test
+
+# --------------------------------------------------------------------------
+# 				JOB USAGE
+# -------------------------------------------------------------------------
+# 		 		 WARNING
+# Not designed as a standalone job! SBATCH cannot take environment variables,
+# instead these variables should be *overwritten* using an appropriate bash
+# script.
+#
+# INPUT (via --export=VAR=VAL)
+# SCRIPTNAME 		- name of .inp file to be run (WITHOUT .inp EXTENSION)
+#
+# IMPORTANT OVERRIDES (via --ntasks=VAL, etc)
+# --ntasks		- Number of tasks (read: cores desired)
+# --time 		- Maximum expected time of of job
+# --mem 		- Maximum expected memory of job
+#
+# -------------------------------------------------------------------------
+
+BATCHDIR='/users/mjs572/scratch/ludwig/slurm' 
+
+echo Running job on host:
+echo -e '\t'`hostname` at `date`
+echo 
+echo N_TASKS: $SLURM_NTASKS
+echo JOB_NAME: $SLURM_JOB_NAME 	
+echo SCRIPTNAME: $SCRIPTNAME
+echo --------------------------------------
+echo
+echo Current working directory: `pwd`
+
+cwd=$(pwd)
+
+echo Navigating to script directory...
+
+cd $BATCHDIR
+echo ...current dir: `pwd`
+cd ../
+
+echo ...current dir: `pwd`
+echo
+echo Loading SLURM OpenMPI Module  
+module load mpi/OpenMPI
+echo
+echo Building ludwig
+echo
+echo --------------------------------------
+
+make clean
+make -j $SLURM_NTASKS
+cp ./src/Ludwig.exe ./examples
+
+echo --------------------------------------
+echo
+echo Returning to working directory
+cd $cwd
+echo Current dir: `pwd`
+
+./run.sh $SCRIPTNAME $SLURM_NTASKS
+./extract.sh $SCRIPTNAME
+
+
+
+
+
+
+
+
+
