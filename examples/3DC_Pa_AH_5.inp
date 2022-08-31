@@ -25,7 +25,7 @@ periodicity 1_0_0
 ##############################################################################
 
 viscosity 0.833333
-force 0_0_0
+force 0.00005_0_0
 isothermal_fluctuations off
 #temperature 0.0000001
 
