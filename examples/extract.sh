@@ -36,7 +36,7 @@ n_c=$(find ./ -name "config*" | wc -l)
 if [ $n_v -gt 0 ]
 then
 	for i in ./vel-*.001-001; do
-		../../extract -k vel.001-001.meta $i
+		../../extract -a -i vel.001-001.meta $i
 		echo $i
 	done
 fi

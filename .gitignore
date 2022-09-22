@@ -3,6 +3,8 @@
 *.a
 *.exe
 a.out
+*.pdf
+*.log
 
 *.new
 *.meta
