@@ -97,7 +97,7 @@ echo Running $SCRIPTNAME
 echo
 echo --------------------------------------
 echo
-./extract.sh $SCRIPTNAME
+./extractconditional.sh $SCRIPTNAME
 echo
 echo --------------------------------------
 echo
