@@ -1,0 +1,4 @@
+absVel1 = colloid1_velocity(1, :).^2 + colloid1_velocity(2, :).^2 + colloid1_velocity(3, :).^2;
+absVel1 = sqrt(absVel1);
+
+plot(absVel1)
