@@ -5,7 +5,7 @@
 a.out
 *.pdf
 *.log
-
+*.asv
 *.new
 *.meta
 *001-001

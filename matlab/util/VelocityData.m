@@ -4,6 +4,8 @@
 % Class to encapsulate methods on LudwigData
 %
 % MEMBER VARIABLES
+%   velocityPlaneCartesian      - Velocity data in array with size (n_x, n_y, 2)
+%                                   where (x, y, 1) returns ux and (x, y, 2) returns uy.
 
 
 classdef VelocityData < LudwigData
@@ -15,21 +17,21 @@ classdef VelocityData < LudwigData
     methods
         function extractPlane(this, t_idx, z_idx)
 
-            % Check system dimensions before proceeding
+            % Check system dimensions are defined before proceeding
             checkSysDim(this);
 
             % Check for velocity data extraction
             try
-                checkVelocityData(this.velocityData);
+                this.checkVelocityData;
             catch
-                extractVelocity(this);
+                this.extractVelocity;
             end
 
             % Check velocity data is defined
-            % Number of planes desired
-            n = length(t_idx);
+            % Number of time steps
+            n_t = length(t_idx);
 
-            this.velocityPlaneCartesian = zeros(this.n_x, this.n_y, 2, n);
+            this.velocityPlaneCartesian = zeros(this.systemSize(1), this.systemSize(2), 2, n_t);
 
             for idx = 1:length(t_idx)
                 this.velocityPlaneCartesian(:, :, 1, idx) = this.velocityData{idx}(:, :, z_idx, 1);
@@ -37,31 +39,33 @@ classdef VelocityData < LudwigData
             end
         end
 
-        function convertPolar(this, x0, y0)
+        function convertPolar(this)
 
             % Check for plane existence
             try
-                checkVelocityPlane(this);
+                this.checkVelocityData;
             catch
                 error('Plane must be extracted first');
             end
-            
-            [~, ~, ~, n] = size(this.velocityPlaneCartesian);
-            this.velocityPlanePolar = zeros(this.n_x, this.n_y, 2, n);
 
-            for idx = 1:n
-                x = this.velocityPlaneCartesian(:, :, 1, idx);
-                y = this.velocityPlaneCartesian(:, :, 2, idx);
-                
-                ###########
-                % can't make a distance from a velocity you twit!
-                r = sqrt((x0 - x).^2 + (y0 - y).^2);
-                theta = atan((y0 - y)./(x0 - x));
+            [r, c, ~] = size(this.velocityPlaneCartesian);
+            this.velocityPlanePolar = zeros(r, c, 2);
 
-                this.velocityPlanePolar(:, :, 1, idx) = r;
-                this.velocityPlanePolar(:, :, 2, idx) = theta;
-                
+
+            for x = 1:r
+                for y = 1:c
+                    ux = this.velocityPlaneCartesian(x, y, 1);
+                    uy = this.velocityPlaneCartesian(x, y, 1);
+                    r  = sqrt(x^2 + y^2);
+                    ur = (x*ux + y*uy)/r;
+                    ut = (x*uy - y*ux)/r;
+                    this.velocityPlanePolar(x, y, :) = [ur; ut];
+                end
             end
+
+
+
+
         end
 
         function checkVelocityPlane(this)
