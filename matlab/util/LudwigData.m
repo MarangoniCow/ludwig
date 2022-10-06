@@ -7,9 +7,7 @@
 % MEMBER VARIABLES
 %   seriesID        -   string, shorthand ID identifying simulation series
 %   folderStr       -   string, data location
-%   n_x             -   int, system x dimension
-%   n_y             -   int, system y dimension
-%   n_z             -   int, system z dimension
+%   systemSize      -   3-by-1 array containing system size (n_x, n_y, n_z)
 %   velocityData    -   matrix of dimension (n_x, n_y, n_z, 3) containing
 %                           fluid velocity values
 %   colloidDisp     -   colloid displacement values
@@ -30,9 +28,7 @@ classdef LudwigData < matlab.mixin.SetGet
     properties
         seriesID        char        % Data information
         folderStr       char
-        n_x             int16       % System sisze
-        n_y             int16
-        n_z             int16
+        systemSize      {mustBeNumeric}
         colloidDisp     {mustBeNumeric}
         colloidVel      {mustBeNumeric}
         velocityData    
@@ -52,9 +48,9 @@ classdef LudwigData < matlab.mixin.SetGet
         % Must be set to extract velocity field
         function setSysDim(this, x, y, z)
 
-            this.n_x = x;
-            this.n_y = y;
-            this.n_z = z;
+            this.systemSize(1) = x;
+            this.systemSize(2) = y;
+            this.systemSize(3) = z; 
 
         end
         % Extract colloid position and velocity
@@ -100,7 +96,7 @@ classdef LudwigData < matlab.mixin.SetGet
             
             for i = 1:n
                 fileName = [this.folderStr, '/', S(i).name];
-                C{i} = extractVelocityASCIIData(fileName, this.n_x, this.n_y, this.n_z);
+                C{i} = extractVelocityASCIIData(fileName, this.systemSize(1), this.systemSize(2), this.systemSize(3));
             end
             
             % Update velocity field with cell. 
@@ -108,13 +104,13 @@ classdef LudwigData < matlab.mixin.SetGet
         end
         function checkSysDim(this)
 
-            if isempty(this.n_x) || isempty(this.n_y) || isempty(this.n_z)
+            if (length(this.systemSize) == 0)
                 error('System dimensions unknown: set using setSysDim');
             end
         end
         function checkVelocityData(this)
 
-            if isempty(velocityData)
+            if isempty(this.velocityData)
                 error('Velocity data not extracted')
             end
         end
