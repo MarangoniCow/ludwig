@@ -101,7 +101,7 @@ echo
 echo
 echo --------------------------------------
 echo
-./cleanraw.sh $SCRIPTNAME
+# ./cleanraw.sh $SCRIPTNAME
 echo
 echo --------------------------------------
 echo --------------------------------------

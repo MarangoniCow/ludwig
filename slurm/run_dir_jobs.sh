@@ -12,7 +12,7 @@ MEM=20
 
 INT_TIME=300
 
-for i in ./3DC_Pa_AH_*.inp; do
+for i in ./3DC_*_AH_*.inp; do
 	temp=$( echo $i | awk '{ print substr( $0, 3 ) }')
 	SCRIPTNAME=$(echo "$temp" | cut -f 1 -d '.')
 	echo $SCRIPTNAME
