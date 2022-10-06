@@ -11,9 +11,9 @@ a.out
 *001-001
 *.vscode
 config.mk
-
+*.aux
+*.toc
+*.dvi
 .idea
-docs/develop.log
-docs/ludwig.dvi
 **examples/*/
 slurm/logs

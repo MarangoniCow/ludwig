@@ -39,7 +39,13 @@ classdef VelocityData < LudwigData
             end
         end
 
-        function convertPolar(this)
+        function convertPolar(this, x0, y0)
+
+            % Set default x0/y0
+            if nargin < 2
+                x0 = 0;
+                y0 = 0;
+            end
 
             % Check for plane existence
             try
@@ -48,17 +54,29 @@ classdef VelocityData < LudwigData
                 error('Plane must be extracted first');
             end
 
-            [r, c, ~] = size(this.velocityPlaneCartesian);
-            this.velocityPlanePolar = zeros(r, c, 2);
+            [row, col, ~] = size(this.velocityPlaneCartesian);
+            this.velocityPlanePolar = zeros(row, col, 2);
 
 
-            for x = 1:r
-                for y = 1:c
+            for x = 1:row
+                for y = 1:col
+
+                    % Define coordinate transformation
+                    xd = x - x0;
+                    yd = y - y0;
+
+                    % Fetch local fluid velocity
                     ux = this.velocityPlaneCartesian(x, y, 1);
-                    uy = this.velocityPlaneCartesian(x, y, 1);
-                    r  = sqrt(x^2 + y^2);
-                    ur = (x*ux + y*uy)/r;
-                    ut = (x*uy - y*ux)/r;
+                    uy = this.velocityPlaneCartesian(x, y, 2);
+
+                    % Fetch centre of source
+                    r  = sqrt(xd^2 + yd^2);
+
+                    % Update r and theta velocities
+                    ur = (xd*ux + yd*uy)/r;
+                    ut = (xd*uy - yd*ux)/r;
+
+                    % Update velocity plane at that point
                     this.velocityPlanePolar(x, y, :) = [ur; ut];
                 end
             end
