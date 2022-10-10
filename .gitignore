@@ -17,3 +17,4 @@ config.mk
 .idea
 **examples/*/
 slurm/logs
+*.mat
