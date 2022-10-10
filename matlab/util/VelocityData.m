@@ -10,12 +10,23 @@
 
 classdef VelocityData < LudwigData
     properties
-        velocityPlaneCartesian       {mustBeNumeric}     % Velocity plane of form (x, y, t_step)
-        velocityPlanePolar           {mustBeNumeric}                                             
+        velocityPlaneCartesian       {mustBeNumeric}     % Cartesian velocity plane of form (x, y, t_step)
+        velocityPlanePolar           {mustBeNumeric}     % Polar velocity plane of the form (x, y, t_step)
     end
 
     methods
         function extractPlane(this, t_idx, z_idx)
+            % extractPlane(this, t_idx, z_idx)
+            %
+            % Extracts a plane from the cartesian velocity data at a given
+            % height and point in time of the simulation.
+            % 
+            % INPUTS
+            %   this    - VelocityData object
+            %   t_idx   - Point of time of interest
+            %   z_idx   - Plane height of interest
+            % OUTPUTS
+            %   Writes output to this.velocityPlaneCartesian
 
             % Check system dimensions are defined before proceeding
             checkSysDim(this);
@@ -27,19 +38,25 @@ classdef VelocityData < LudwigData
                 this.extractVelocity;
             end
 
-            % Check velocity data is defined
-            % Number of time steps
-            n_t = length(t_idx);
+            this.velocityPlaneCartesian = zeros(this.systemSize(1), this.systemSize(2), 2);
 
-            this.velocityPlaneCartesian = zeros(this.systemSize(1), this.systemSize(2), 2, n_t);
-
-            for idx = 1:length(t_idx)
-                this.velocityPlaneCartesian(:, :, 1, idx) = this.velocityData{idx}(:, :, z_idx, 1);
-                this.velocityPlaneCartesian(:, :, 2, idx) = this.velocityData{idx}(:, :, z_idx, 2);
-            end
+            this.velocityPlaneCartesian(:, :, 1) = this.velocityData{t_idx}(:, :, z_idx, 1);
+            this.velocityPlaneCartesian(:, :, 2) = this.velocityData{t_idx}(:, :, z_idx, 2);
+            
         end
 
         function convertPolar(this, x0, y0)
+            % converPolar(this, x0, y0)
+            %
+            % Converts this.velocityPlaneCartesian to a polar velocity
+            % description centered around x0, y0. The velocity cartesian
+            % plane must be extracted first before running convertPolar.
+            %
+            % INPUTS
+            %   x0      - x-coordinate for new origin
+            %   y0      - y-coordinate for new origin
+            % OUTPUTS
+            %   Writes to this.velocityPlanePolar
 
             % Set default x0/y0
             if nargin < 2
@@ -49,7 +66,7 @@ classdef VelocityData < LudwigData
 
             % Check for plane existence
             try
-                this.checkVelocityData;
+                this.checkForCartesianPlane;
             catch
                 error('Plane must be extracted first');
             end
@@ -86,9 +103,21 @@ classdef VelocityData < LudwigData
 
         end
 
-        function checkVelocityPlane(this)
+        function checkForCartesianPlane(this)
+            % checkForCartesianPlane(this)
+            %
+            % Checks for the existence of velocityPlaneCartesian
             if isempty(this.velocityPlaneCartesian)
-                error('Velocity plane not extracted');
+                error('Cartesaian velocity plane not extracted');
+            end
+        end
+
+        function checkForPolarPlane(this)
+            % checkForPolarPlane(this)
+            %
+            % Checks for the existence of velocityPlanePolar
+            if isempty(this.velocityPlanePolar)
+                error('Polar velocity plane not extract');
             end
         end
     end

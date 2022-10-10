@@ -26,12 +26,14 @@
 
 classdef LudwigData < matlab.mixin.SetGet
     properties
-        seriesID        char        % Data information
-        folderStr       char
-        systemSize      {mustBeNumeric}
-        colloidDisp     {mustBeNumeric}
-        colloidVel      {mustBeNumeric}
-        velocityData    
+        seriesID        char                % Data information
+        folderStr       char                % String to folder containing data
+        systemSize      {mustBeNumeric}     % Array containing system size
+        colloidDisp     {mustBeNumeric}     % {n}(3, t) array for nth colloid displacement at time t
+        colloidVel      {mustBeNumeric}     % {n}(3, t) array for nth colloid velocity at time t
+        colloid_a                           % Colloid radius
+        velocityData                        % {t}(x, y, z, 3) array for cartesian velocity at point (x, y, z) at time t
+
     end
     methods
         % Constructor: Assigns folder string and series ID.
