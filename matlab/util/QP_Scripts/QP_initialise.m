@@ -1,7 +1,7 @@
 %%%%% INITIALISE QUASI-PARAMETER FITTING VARIABLES %%%%%
 
 % Initialise ChannelData
-VelData_QP = VelocityData('~/Documents/ludwig_viking_data/3DC_Pu_QP_01/data/', '3DC_Pu_QP_01');
+VelData_QP = VelocityData('~/Documents/ludwig_viking_data/3DCU_Pu_QP_01/data/', '3DC_Pu_QP_01');
 setSysDim(VelData_QP, 128, 72, 36);
 VelData_QP.colloid_a = 7.25;
 

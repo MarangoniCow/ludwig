@@ -3,7 +3,7 @@
 % Define fit type
 %   - x0, y0 are functions of the problem
 %   - x, y is the matrix grid
-ft = fittype('quasiFunction(b1, b2, c1, c2, x0, y0, lambda, x, y)', ...
+ft = fittype('Q2D_farfieldFcn(b1, b2, c1, c2, x0, y0, lambda, x, y)', ...
     'independent', {'x', 'y'}, 'dependent', 'ur', 'problem',  {'x0', 'y0', 'lambda'});
 
 
@@ -28,11 +28,14 @@ X = X(:); Y = Y(:);
 
 % Fetch data
 vr = VelData_QP.velocityPlanePolar(x, y, 1);
+vt = VelData_QP.velocityPlanePolar(x, y, 2);
+
 vr = vr(:);
+vt = vt(:);
 
 % Generate list of points to exclude
 a = VelData_QP.colloid_a;
-[Xc, Yc] = generateRadialXYPoints(x0, y0, a -1);
+[Xc, Yc] = generateRadialXYPoints(x0, y0, a + 3);
 
 % Generate idx list of points
 idxList = [];
@@ -50,6 +53,7 @@ end
 X(idxList) = [];
 Y(idxList) = [];
 vr(idxList) = [];
+vt(idxList) = [];
 
 
 

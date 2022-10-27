@@ -1,7 +1,7 @@
 
 
 % Define fit type
-%   - x0, y0 are functions of the problem
+%   - x0, y0 are functions of the problem 
 %   - x, y is the matrix grid
 ft = fittype('quasiFunction2(b1, b2, a, Us, x0, y0, lambda, x, y)', ...
     'independent', {'x', 'y'}, 'dependent', 'ut', 'problem',  {'a', 'Us', 'x0', 'y0', 'lambda'});
