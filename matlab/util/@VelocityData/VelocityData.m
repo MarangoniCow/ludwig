@@ -1,13 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ======================== CLASS: DATAMETHODS =============================
+% ======================= CLASS: VELOCITYDATA =============================
 %
-% Class to encapsulate methods on LudwigData
+% Class to encapsulate methods on VelocityData
 %
 % MEMBER VARIABLES
 %   velocityPlaneCartesian      - Velocity data in array with size (n_x, n_y, 2)
 %                                   where (x, y, 1) returns ux and (x, y, 2) returns uy.
 %   velocityPlanePolar          - Velocity data in array with size (n_x, n_y, 2)
 %                                   where (x, y, 1/2) returns ur/ut.
+
 
 
 classdef VelocityData < LudwigData
@@ -143,6 +144,15 @@ classdef VelocityData < LudwigData
                 error('Polar velocity plane not extracted');
             end
         end
+    end
+
+
+    % Declare graphing methods
+    methods
+        fig = graphVelocitySurface(this, velComponentStr);
+        fig = graphQuiver(this)
+        fig = graphStreamlines(this)
+
     end
 end
 

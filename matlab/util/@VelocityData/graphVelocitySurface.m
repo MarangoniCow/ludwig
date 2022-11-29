@@ -3,13 +3,13 @@
 % Acts on a VelocityPlane object to graph the velocity plane.
 
 
-function graphVelocityPlane(VelocityDataObj, velComponentStr)
+function fig = graphVelocitySurface(this, velComponentStr)
 
     % Check for plane existence
-    VelocityDataObj.checkForPolarPlane;
+    this.checkForPolarPlane;
     
     % Extract plane dimensions
-    [nx, ny, ~] = size(VelocityDataObj.velocityPlaneCartesian);
+    [nx, ny, ~] = size(this.velocityPlaneCartesian);
     x = 1:nx; y = 1:ny;
 
     % Set surface mesh
@@ -18,17 +18,20 @@ function graphVelocityPlane(VelocityDataObj, velComponentStr)
     % Determien component of interest
     switch velComponentStr
         case 'ux'
-            Z = VelocityDataObj.velocityPlaneCartesian(:, :, 1);
+            Z = this.velocityPlaneCartesian(:, :, 1);
         case 'uy'
-            Z = VelocityDataObj.velocityPlaneCartesian(:, :, 2);
+            Z = this.velocityPlaneCartesian(:, :, 2);
         case 'ur'
-            Z = VelocityDataObj.velocityPlanePolar(:, :, 1);
+            Z = this.velocityPlanePolar(:, :, 1);
         case 'ut'
-            Z = VelocityDataObj.velocityPlanePolar(:, :, 2);
+            Z = this.velocityPlanePolar(:, :, 2);
+        case 'uz'
+            Z = this.velocityData{this.timeStep}(:, :, this.extractHeight, 3);
         otherwise
-            error('Invalid velocity component, valid options: ux, uy, ur, ut')
+            error('Invalid velocity component, valid options: ux, uy, ur, ut or uz')
     end
-
+    
+    fig = figure;
     surf(X', Y', Z);
     
     s = plotdefaults;
