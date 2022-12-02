@@ -5,7 +5,13 @@
 
 function fig = graphStreamlines(this)
 
+    % 
+
+    % Generate a new figure
+    fig = figure;
+
     
+
     % Check for plane existence
     this.checkForPolarPlane;
     
@@ -18,10 +24,10 @@ function fig = graphStreamlines(this)
     s = plotdefaults;
     
     % Colourmap plot: absolute value of velocity.
-    fig = figure;
+    
     hold on
     Uabs = abs(U) + abs(V);
-    hs = pcolor(X, Y, Uabs);
+    pcolor(X, Y, Uabs);
     colormap parula
     shading interp
 
@@ -44,4 +50,6 @@ function fig = graphStreamlines(this)
     ax = gca;
     D = ax.DataAspectRatio;
     ax.DataAspectRatio = [D(1), D(1), 1];
+
+
 end

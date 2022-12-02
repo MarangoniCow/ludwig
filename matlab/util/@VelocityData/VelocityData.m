@@ -154,6 +154,11 @@ classdef VelocityData < LudwigData
         fig = graphStreamlines(this)
 
     end
+    
+    % Helper method to find channel runs
+    methods (Access = public)
+        idxList = findChannelRuns(this);
+    end
 end
 
 
