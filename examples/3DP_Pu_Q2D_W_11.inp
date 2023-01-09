@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #  PULLERS IN CONFINEMENT
-#  Identifier: 3DP_Pl_Q2D_#
+#  Identifier: 3DP_Pu_Q2D_#
 #
 ##############################################################################
 
@@ -13,7 +13,7 @@ N_cycles 30000
 # 
 ##############################################################################
 
-size 256_200_52
+size 256_200_104
 
 
 periodicity 1_1_0
@@ -47,11 +47,11 @@ colloid_init              input_one
 colloid_one_type          active
 colloid_one_a0            11.33
 colloid_one_ah            11.33
-colloid_one_r             24.0_100.0_32.0
+colloid_one_r             24.0_100.0_52.0
 colloid_one_v             0.0_0.0_0.0
 colloid_one_m             1_0.0_0.0
 colloid_one_b1            0.05
-colloid_one_b2            0.05
+colloid_one_b2            -0.05
 colloid_one_isfixedrxyz    0_0_1
 
 

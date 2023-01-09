@@ -1,11 +1,11 @@
 ##############################################################################
 #
 #  PULLERS IN CONFINEMENT
-#  Identifier: 3DC_Pl_AH_#
+#  Identifier: 3DP_Pu_Q2D_#
 #
 ##############################################################################
 
-N_cycles 100000
+N_cycles 30000
 
 ##############################################################################
 #
@@ -13,10 +13,10 @@ N_cycles 100000
 # 
 ##############################################################################
 
-size 128_56_56
+size 256_200_136
 
 
-periodicity 1_0_0
+periodicity 1_1_0
 
 ##############################################################################
 #
@@ -27,7 +27,6 @@ periodicity 1_0_0
 viscosity 0.833333
 force 0_0_0
 isothermal_fluctuations off
-#temperature 0.0000001
 
 ##############################################################################
 #
@@ -46,13 +45,15 @@ free_energy none
 colloid_init              input_one
 
 colloid_one_type          active
-colloid_one_a0            7.25
-colloid_one_ah            7.25
-colloid_one_r             24.0_28.0_28.0
+colloid_one_a0            11.33
+colloid_one_ah            11.33
+colloid_one_r             24.0_100.0_68.0
 colloid_one_v             0.0_0.0_0.0
 colloid_one_m             1_0.0_0.0
 colloid_one_b1            0.05
-colloid_one_b2            0.05
+colloid_one_b2            -0.05
+colloid_one_isfixedrxyz    0_0_1
+
 
 
 
@@ -63,7 +64,7 @@ colloid_one_b2            0.05
 #
 ###############################################################################
 
-boundary_walls 0_1_1
+boundary_walls 0_0_1
 
 ###############################################################################
 #
@@ -71,13 +72,13 @@ boundary_walls 0_1_1
 #
 ###############################################################################
 
-freq_vel    1000
+freq_vel    500
 vel_format  ASCII
 
-freq_statistics 1000
+freq_statistics 5000
 config_at_end yes
 
-colloid_io_freq 100
+colloid_io_freq 500
 
 
 ###############################################################################
