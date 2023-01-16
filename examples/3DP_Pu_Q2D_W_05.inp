@@ -13,7 +13,7 @@ N_cycles 30000
 # 
 ##############################################################################
 
-size 256_200_56
+size 384_256_80
 
 
 periodicity 1_1_0
@@ -47,7 +47,7 @@ colloid_init              input_one
 colloid_one_type          active
 colloid_one_a0            11.33
 colloid_one_ah            11.33
-colloid_one_r             24.0_100.0_28.0
+colloid_one_r             24.0_128.0_40.0
 colloid_one_v             0.0_0.0_0.0
 colloid_one_m             1_0.0_0.0
 colloid_one_b1            0.05
