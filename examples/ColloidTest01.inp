@@ -5,7 +5,7 @@
 #
 ##############################################################################
 
-N_cycles 10000
+N_cycles 5000
 
 ##############################################################################
 #
@@ -13,7 +13,7 @@ N_cycles 10000
 # 
 ##############################################################################
 
-size 30_30_30
+size 50_50_50
 
 
 periodicity 1_1_0
@@ -45,9 +45,9 @@ free_energy none
 colloid_init              input_one
 
 colloid_one_type          active
-colloid_one_a0            3.0
-colloid_one_ah            3.0
-colloid_one_r             15.0_15.0_15.0
+colloid_one_a0            4.0
+colloid_one_ah            4.0
+colloid_one_r             25.0_25.0_25.0
 colloid_one_v             0.0_0.0_0.0
 colloid_one_m             1_0.0_0.0
 colloid_one_b1            0.05
