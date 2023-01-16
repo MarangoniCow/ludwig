@@ -101,13 +101,35 @@ echo
 echo
 echo --------------------------------------
 echo
+echo  Extracting with MATLAB
+echo
+echo --------------------------------------
+echo
+echo Moving to MATLAB: Quasi2DCode directory
+cd ~/scratch/Quasi2DCode
+echo Current dir: `pwd`
+echo 
+echo --------------------------------------
+echo
+echo Loading MATLAB module
+module load math/MATLAB/2022a
+echo
+echo --------------------------------------
+echo
+matlab -nodisplay -nosplash -nodesktop -r
+" 	addpath(genpath(pwd));
+	cd util;
+	viking_script($SCRIPTNAME);
+	exit;
+"
 echo
 echo --------------------------------------
 echo --------------------------------------
-echo              FINISHED
+echo
+echo 		    FINISHED
+echo
 echo --------------------------------------
 echo --------------------------------------
-
 
 
 
