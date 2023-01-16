@@ -116,12 +116,7 @@ module load math/MATLAB/2022a
 echo
 echo --------------------------------------
 echo
-matlab -nodisplay -nosplash -nodesktop -r
-" 	addpath(genpath(pwd));
-	cd util;
-	viking_script($SCRIPTNAME);
-	exit;
-"
+matlab -r "addpath(genpath(pwd)); cd util; viking_script('$SCRIPTNAME'); exit;"
 echo
 echo --------------------------------------
 echo --------------------------------------
