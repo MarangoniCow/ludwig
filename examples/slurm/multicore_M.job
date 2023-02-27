@@ -35,79 +35,36 @@ echo
 echo N_TASKS: $SLURM_NTASKS
 echo JOB_NAME: $SLURM_JOB_NAME 	
 echo SCRIPTNAME: $SCRIPTNAME
+echo MATLAB_VAR: $MATLAB_VAR
+echo
+echo --------------------------------------
+echo ------ MATLAB Analysis Script --------
 echo --------------------------------------
 echo
 echo Current working directory: `pwd`
 
 cwd=$(pwd)
 
-echo Navigating to script directory...
-
-cd $BATCHDIR
-echo ...current dir: `pwd`
-echo Navigating to Ludwig root...
-cd ../
-echo ...current dir: `pwd`
-echo
-echo --------------------------------------
-echo
-echo Loading SLURM OpenMPI Module  
-	module load mpi/OpenMPI
-echo Cleaning Ludwig
-echo
-echo --------------------------------------
-echo
-make clean
-echo
-echo --------------------------------------
-echo
-echo Copying config file
-cp ./config/unix-mpicc-default.mk ./config.mk
-echo
-echo --------------------------------------
-echo
-echo Building Ludwig
-echo
-echo --------------------------------------
-echo
-make -j $SLURM_NTASKS
-echo
-echo --------------------------------------
-echo
-echo Copying Ludwig to working directory
-cp ./src/Ludwig.exe $cwd
-echo
-echo --------------------------------------
-echo
-echo Returning to working directory
-cd $cwd
+echo Moving to MATLAB: Quasi2DCode directory
+cd ~/scratch/Quasi2DCode
 echo Current dir: `pwd`
 echo 
 echo --------------------------------------
 echo
-echo Running $SCRIPTNAME
-echo 
-echo --------------------------------------
-echo
-./run.sh $SCRIPTNAME $SLURM_NTASKS
+echo Loading MATLAB module
+module load math/MATLAB/2022a
 echo
 echo --------------------------------------
 echo
-echo Running $SCRIPTNAME
-echo
-echo --------------------------------------
-echo
-./extract.sh $SCRIPTNAME
-echo
-echo --------------------------------------
-echo
+matlab -r "addpath(genpath(pwd)); cd util; viking_script('$SCRIPTNAME', '$MATLAB_VAR'); exit;"
 echo
 echo --------------------------------------
 echo --------------------------------------
-echo              FINISHED
+echo
+echo 		    FINISHED
+echo
 echo --------------------------------------
 echo --------------------------------------
-
 
 
 
