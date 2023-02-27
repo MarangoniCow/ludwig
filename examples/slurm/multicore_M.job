@@ -38,13 +38,17 @@ echo SCRIPTNAME: $SCRIPTNAME
 echo MATLAB_VAR: $MATLAB_VAR
 echo
 echo --------------------------------------
-echo ------ MATLAB Analysis Script --------
-echo --------------------------------------
 echo
 echo Current working directory: `pwd`
 
 cwd=$(pwd)
-
+echo
+echo 
+echo 
+echo --------------------------------------
+echo ---------- MATLAB Analysis -----------
+echo --------------------------------------
+echo
 echo Moving to MATLAB: Quasi2DCode directory
 cd ~/scratch/Quasi2DCode
 echo Current dir: `pwd`
@@ -57,6 +61,8 @@ echo
 echo --------------------------------------
 echo
 matlab -r "addpath(genpath(pwd)); cd util; viking_script('$SCRIPTNAME', '$MATLAB_VAR'); exit;"
+echo
+echo
 echo
 echo --------------------------------------
 echo --------------------------------------

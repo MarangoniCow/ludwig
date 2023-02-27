@@ -27,7 +27,8 @@
 #
 # -------------------------------------------------------------------------
 
-BATCHDIR='/users/mjs572/scratch/ludwig/slurm' 
+BATCHDIR='/users/mjs572/scratch/ludwig/examples/slurm' 
+LUDWIGROOT = '/users/mjs572/scratch/ludwig';
 
 echo Running job on host:
 echo -e '\t'`hostname` at `date`
@@ -42,19 +43,21 @@ echo
 echo Current working directory: `pwd`
 
 cwd=$(pwd)
+echo
+echo Loading SLURM OpenMPI Module  
+	module load mpi/OpenMPI/4.1.4-GCC-11.3.0
 
-echo Navigating to script directory...
+echo 
+echo --------------------------------------
+echo ---------- Building Ludwig -----------
+echo --------------------------------------
 
-cd $BATCHDIR
-echo ...current dir: `pwd`
 echo Navigating to Ludwig root...
-cd ../
+cd $LUDWIGROOT
 echo ...current dir: `pwd`
 echo
 echo --------------------------------------
-echo
-echo Loading SLURM OpenMPI Module  
-	module load mpi/OpenMPI
+
 echo Cleaning Ludwig
 echo
 echo --------------------------------------
@@ -85,6 +88,10 @@ echo Returning to working directory
 cd $cwd
 echo Current dir: `pwd`
 echo 
+echo
+echo
+echo --------------------------------------
+echo --------- Run and Extract Ludwig------
 echo --------------------------------------
 echo
 echo Running $SCRIPTNAME
@@ -95,16 +102,16 @@ echo
 echo
 echo --------------------------------------
 echo
-echo Running $SCRIPTNAME
+echo Extracting $SCRIPTNAME
 echo
 echo --------------------------------------
 echo
 ./extract.sh $SCRIPTNAME
 echo
+echo
+echo
 echo --------------------------------------
-echo
-echo  Extracting with MATLAB
-echo
+echo ---------- MATLAB Analysis -----------
 echo --------------------------------------
 echo
 echo Moving to MATLAB: Quasi2DCode directory
@@ -119,6 +126,8 @@ echo
 echo --------------------------------------
 echo
 matlab -r "addpath(genpath(pwd)); cd util; viking_script('$SCRIPTNAME', '$MATLAB_VAR'); exit;"
+echo
+echo
 echo
 echo --------------------------------------
 echo --------------------------------------

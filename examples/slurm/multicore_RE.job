@@ -36,22 +36,26 @@ echo N_TASKS: $SLURM_NTASKS
 echo JOB_NAME: $SLURM_JOB_NAME 	
 echo SCRIPTNAME: $SCRIPTNAME
 echo
+echo
 echo --------------------------------------
 echo
 echo Current working directory: `pwd`
 
-echo --------------------------------------
+cwd=$(pwd)
 echo
 echo Loading SLURM OpenMPI Module  
-	module load mpi/OpenMPI
-echo
+	module load mpi/OpenMPI/4.1.4-GCC-11.3.0
+
+echo 
+echo --------------------------------------
+echo --------- Run and Extract Ludwig------
 echo --------------------------------------
 echo
 echo Running $SCRIPTNAME
 echo 
 echo --------------------------------------
 echo
-	./run.sh $SCRIPTNAME $SLURM_NTASKS
+./run.sh $SCRIPTNAME $SLURM_NTASKS
 echo
 echo --------------------------------------
 echo
@@ -59,9 +63,10 @@ echo Extracting $SCRIPTNAME
 echo
 echo --------------------------------------
 echo
-	./extract.sh $SCRIPTNAME
+./extract.sh $SCRIPTNAME
 echo
-echo --------------------------------------
+echo
+echo
 echo
 echo
 echo --------------------------------------
