@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-BATCHDIR='/users/mjs572/scratch/ludwig/slurm' 
+BATCHDIR='/users/mjs572/scratch/ludwig/examples/slurm' 
 cwd=$(pwd)
 
 
