@@ -67,7 +67,7 @@ echo
 echo --------------------------------------
 echo
 echo Copying config file
-cp ./config/unix-mpicc-default.mk ./config.mk
+cp ./config/epcc-archer2.mk ./config.mk
 echo
 echo --------------------------------------
 echo
@@ -93,6 +93,7 @@ echo
 echo --------------------------------------
 echo --------- Run and Extract Ludwig------
 echo --------------------------------------
+echo
 echo
 echo Running $SCRIPTNAME
 echo 
