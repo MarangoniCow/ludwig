@@ -67,7 +67,7 @@ echo
 echo --------------------------------------
 echo
 echo Copying config file
-cp ./config/epcc-archer2.mk ./config.mk
+cp ./config/unix-mpicc-viking.mk ./config.mk
 echo
 echo --------------------------------------
 echo
