@@ -103,36 +103,6 @@ echo
 echo
 echo --------------------------------------
 echo
-echo Extracting $SCRIPTNAME
-echo
-echo --------------------------------------
-echo
-./extract.sh $SCRIPTNAME
-echo
-echo
-echo
-echo --------------------------------------
-echo ---------- MATLAB Analysis -----------
-echo --------------------------------------
-echo
-echo Moving to MATLAB: Quasi2DCode directory
-cd ~/scratch/Quasi2DCode
-echo Current dir: `pwd`
-echo 
-echo --------------------------------------
-echo
-echo Loading MATLAB module
-module load math/MATLAB/2022a
-echo
-echo --------------------------------------
-echo
-matlab -r "addpath(genpath(pwd)); cd util; viking_script('$SCRIPTNAME', '$MATLAB_VAR'); exit;"
-echo
-echo
-echo
-echo --------------------------------------
-echo --------------------------------------
-echo
 echo 		    FINISHED
 echo
 echo --------------------------------------
