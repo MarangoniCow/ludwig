@@ -28,7 +28,7 @@
 # -------------------------------------------------------------------------
 
 BATCHDIR='/users/mjs572/scratch/ludwig/examples/slurm' 
-LUDWIGROOT = '/users/mjs572/scratch/ludwig';
+LUDWIGROOT='/users/mjs572/scratch/ludwig';
 
 echo Running job on host:
 echo -e '\t'`hostname` at `date`

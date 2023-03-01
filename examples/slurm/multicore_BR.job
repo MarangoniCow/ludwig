@@ -28,7 +28,7 @@
 # -------------------------------------------------------------------------
 
 BATCHDIR='/users/mjs572/scratch/ludwig/examples/slurm' 
-LUDWIGROOT = '/users/mjs572/scratch/ludwig';
+LUDWIGROOT='/users/mjs572/scratch/ludwig';
 
 echo Running job on host:
 echo -e '\t'`hostname` at `date`
@@ -39,15 +39,12 @@ echo SCRIPTNAME: $SCRIPTNAME
 echo MATLAB_VAR: $MATLAB_VAR
 echo
 echo --------------------------------------
-echo
 echo Current working directory: `pwd`
-
 cwd=$(pwd)
 echo
 echo Loading SLURM OpenMPI Module  
 	module load mpi/OpenMPI/4.1.4-GCC-11.3.0
 
-echo 
 echo --------------------------------------
 echo ---------- Building Ludwig -----------
 echo --------------------------------------
@@ -70,13 +67,9 @@ echo Copying config file
 cp ./config/unix-mpicc-viking.mk ./config.mk
 echo
 echo --------------------------------------
-echo
 echo Building Ludwig
-echo
 echo --------------------------------------
-echo
 make -j $SLURM_NTASKS
-echo
 echo --------------------------------------
 echo
 echo Copying Ludwig to working directory

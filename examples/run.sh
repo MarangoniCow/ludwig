@@ -31,7 +31,7 @@ fi
 # Run example
 mkdir -p ./$filename/data
 cd ./$filename/data
-mpirun -np $ntasks ../../Ludwig.exe ../../$filename.inp
+srun ../../Ludwig.exe ../../$filename.inp
 cd ~
 
 
